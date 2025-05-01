@@ -32,42 +32,42 @@ export function WalletTransactions({ walletAddress, isLoading }: WalletTransacti
       {
         id: "1",
         type: "in",
-        hash: "0x1234...5678",
+        hash: "5Uyz2mTmcHVHcMRGvNpjJjuDiGFmkPXcCgLuPWvYmZL9...",
         timestamp: "2023-05-01 14:32:15",
-        from: "0xabcd...efgh",
+        from: "DRGNjvBvnXNiQz9dTppGkEcVsLxrYCJ2wh9zMEXHD9T...",
         to: walletAddress,
-        value: "0.5 ETH",
-        fee: "0.002 ETH",
+        value: "2.5 SOL",
+        fee: "0.000005 SOL",
       },
       {
         id: "2",
         type: "out",
-        hash: "0x8765...4321",
+        hash: "3xGsZvNVvRRQVf6PiA4gX5xgz9RMbj2KjfaJcMUDLBJ...",
         timestamp: "2023-05-01 12:15:45",
         from: walletAddress,
-        to: "0xijkl...mnop",
-        value: "0.1 ETH",
-        fee: "0.001 ETH",
+        to: "8HGyAAB1yoM1wMeQXzdvEA9uHjYSFLKQv8CMQjs1nxQ...",
+        value: "0.5 SOL",
+        fee: "0.000005 SOL",
       },
       {
         id: "3",
         type: "in",
-        hash: "0x2468...1357",
+        hash: "4tSEGQkR1PVE4rMrJqQSHxNYmN5w2ynxdKQiYJpQZcB...",
         timestamp: "2023-04-30 23:45:12",
-        from: "0xqrst...uvwx",
+        from: "CZF1BgSsSBbZW7Y1PGNi76PG7LK9TzW7NbFTZsZLVNg...",
         to: walletAddress,
         value: "100 USDC",
-        fee: "0.001 ETH",
+        fee: "0.000005 SOL",
       },
       {
         id: "4",
         type: "out",
-        hash: "0x1357...2468",
+        hash: "2vkUDkGqPFbT2U8QvZKGBJzKYfLJYJJpZjNVXHvHWqL...",
         timestamp: "2023-04-30 18:22:33",
         from: walletAddress,
-        to: "0xyzab...cdef",
-        value: "25 LINK",
-        fee: "0.002 ETH",
+        to: "6YxjqXxEKHAYgSRjpLqr3tuHcj7ZPbKFwPZVhxMceyG...",
+        value: "25 RAY",
+        fee: "0.000005 SOL",
       },
     ]
 
@@ -131,9 +131,9 @@ export function WalletTransactions({ walletAddress, isLoading }: WalletTransacti
                 <TableCell>{tx.value}</TableCell>
                 <TableCell className="text-right">
                   <Button variant="ghost" size="icon" asChild>
-                    <a href={`https://etherscan.io/tx/${tx.hash}`} target="_blank" rel="noopener noreferrer">
+                    <a href={`https://explorer.solana.com/tx/${tx.hash}`} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="h-4 w-4" />
-                      <span className="sr-only">View on Etherscan</span>
+                      <span className="sr-only">View on Solana Explorer</span>
                     </a>
                   </Button>
                 </TableCell>

@@ -9,6 +9,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { WalletTransactions } from "@/components/wallet-transactions"
 import { WalletTokens } from "@/components/wallet-tokens"
 import { WalletOverview } from "@/components/wallet-overview"
+import { SolanaWalletInfo } from "@/components/solana-wallet-info"
+import { CopyTrading } from "@/components/copy-trading"
 
 export function WalletDashboard() {
   const [wallets, setWallets] = useState<string[]>([])
@@ -47,10 +49,8 @@ export function WalletDashboard() {
     <div className="container mx-auto py-6 px-4 md:px-6">
       <div className="flex flex-col gap-8">
         <div className="flex flex-col gap-2">
-          <h1 className="text-3xl font-bold tracking-tight">Wallet Tracker</h1>
-          <p className="text-muted-foreground">
-            Monitor cryptocurrency wallets, track transactions, and view token balances.
-          </p>
+          <h1 className="text-3xl font-bold tracking-tight">Solana Wallet Tracker</h1>
+          <p className="text-muted-foreground">Monitor cryptocurrency wallets, track transactions, and copy trades.</p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-[300px_1fr]">
@@ -119,10 +119,10 @@ export function WalletDashboard() {
                   <Button
                     variant="outline"
                     className="justify-start"
-                    onClick={() => window.open(`https://etherscan.io/address/${selectedWallet}`, "_blank")}
+                    onClick={() => window.open(`https://explorer.solana.com/address/${selectedWallet}`, "_blank")}
                   >
                     <ExternalLink className="mr-2 h-4 w-4" />
-                    View on Etherscan
+                    View on Solana Explorer
                   </Button>
                 </CardContent>
               </Card>
@@ -141,6 +141,8 @@ export function WalletDashboard() {
                     <TabsTrigger value="overview">Overview</TabsTrigger>
                     <TabsTrigger value="tokens">Tokens</TabsTrigger>
                     <TabsTrigger value="transactions">Transactions</TabsTrigger>
+                    <TabsTrigger value="staking">Staking</TabsTrigger>
+                    <TabsTrigger value="copytrading">Copy Trading</TabsTrigger>
                   </TabsList>
                   <TabsContent value="overview">
                     <WalletOverview walletAddress={selectedWallet} isLoading={isLoading} />
@@ -150,6 +152,12 @@ export function WalletDashboard() {
                   </TabsContent>
                   <TabsContent value="transactions">
                     <WalletTransactions walletAddress={selectedWallet} isLoading={isLoading} />
+                  </TabsContent>
+                  <TabsContent value="staking">
+                    <SolanaWalletInfo walletAddress={selectedWallet} isLoading={isLoading} />
+                  </TabsContent>
+                  <TabsContent value="copytrading">
+                    <CopyTrading wallets={wallets} />
                   </TabsContent>
                 </Tabs>
               </CardContent>

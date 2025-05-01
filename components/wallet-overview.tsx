@@ -24,9 +24,9 @@ export function WalletOverview({ walletAddress, isLoading }: WalletOverviewProps
     // In a real app, you would fetch this data from an API
     // This is just mock data for demonstration
     const mockData: WalletStats = {
-      totalBalance: "1.245 ETH",
-      totalValue: "$2,456.78",
-      change24h: 2.34,
+      totalBalance: "12.45 SOL",
+      totalValue: "$456.78",
+      change24h: 3.45,
       lastActivity: "2 hours ago",
     }
 
@@ -104,7 +104,7 @@ export function WalletOverview({ walletAddress, isLoading }: WalletOverviewProps
           <CardTitle className="text-sm font-medium">Network</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="text-2xl font-bold">Ethereum</div>
+          <div className="text-2xl font-bold">Solana</div>
           <p className="text-xs text-muted-foreground">Mainnet</p>
         </CardContent>
       </Card>
